@@ -304,3 +304,4 @@ bind-key 0 run "tmux split-window -l 12 'zsh -ci ftpane'"
 
 set -g default-terminal 'tmux-256color'
 set -as terminal-overrides ',xterm*:Tc:sitm=\E[3m'
+bind-key M-S command-prompt -I "~/tmux.log" -p "Store current pane contents to file:" "capture-pane -b temp-capture-buffer -S -; save-buffer -b temp-capture-buffer %1; delete-buffer -b capture-buffer"
